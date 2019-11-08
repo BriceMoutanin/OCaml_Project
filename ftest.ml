@@ -1,4 +1,5 @@
 open Gfile
+open Tools
     
 let () =
 
@@ -25,6 +26,15 @@ let () =
 
   (* Rewrite the graph that has been read. *)
   let () = write_file outfile graph in
+  
+  let gr2 = clone_nodes graph in 
+  let () = write_file "graph2.txt" gr2 in
 
+  let gr3 = gmap graph (fun s -> s ^ "55000") in
+  let () = write_file "graph3.txt" gr3 in
+
+  let gr4 = add_arc (gmap graph int_of_string) 0 1 3 in
+  let () = write_file "graph4.txt" (gmap gr4 string_of_int) in
+    
   ()
 
