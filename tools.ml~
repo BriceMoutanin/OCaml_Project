@@ -1,0 +1,3 @@
+
+let clone_nodes g = n_fold g (new_node) empty_graph
+
