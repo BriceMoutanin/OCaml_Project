@@ -35,6 +35,8 @@ let () =
 
   let gr4 = add_arc (gmap graph int_of_string) 0 1 3 in
   let () = write_file "graph4.txt" (gmap gr4 string_of_int) in
+  
+  let () = export "graphdot.txt" graph in
     
   ()
 
