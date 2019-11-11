@@ -99,13 +99,17 @@ let export path sg =
 		"\tLR_" ^ string_of_int id1 ^ " -> LR_" ^ string_of_int id2 ^ "[ label = \"" ^ lb ^ "\" ];\n"
 	in
 	
+	let nb_arcs = n_fold sg (fun acu id -> (acu+1)) 0 in
+	
 	(* Open a write-file. *)
   let ff = open_out path in
   
   (* Write in this file. *)
 	fprintf ff "digraph finite_state_machine {\n\t";
 	fprintf ff "rankdir=LR;\n\t";
-	fprintf ff "size=\"5\"\n\t";
+	fprintf ff "size=\"";
+	fprintf ff "%s" (string_of_int (nb_arcs-1)) ;
+	fprintf ff "\"\n\t";
   fprintf ff "node [shape = circle];\n";
   e_fold sg (fun s id1 id2 lb -> fprintf ff "%s" (string_of_arc id1 id2 lb) ) () ;
   fprintf ff "}";
