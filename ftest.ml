@@ -1,5 +1,6 @@
 open Gfile
 open Tools
+open Fordfulkerson
     
 let () =
 
@@ -37,6 +38,8 @@ let () =
   let () = write_file "graph4.txt" (gmap gr4 string_of_int) in
   
   let () = export "graphdot.txt" graph in
+  
+  let chemin = find_path gr4 [] 0 5 in
+  Printf.printf "%s" (Fordfulkerson.string_of_path chemin) ;
     
   ()
-
