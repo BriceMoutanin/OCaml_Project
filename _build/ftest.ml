@@ -1,5 +1,6 @@
 open Gfile
 open Tools
+open Fordfulkerson
     
 let () =
 
@@ -35,6 +36,12 @@ let () =
 
   let gr4 = add_arc (gmap graph int_of_string) 0 1 3 in
   let () = write_file "graph4.txt" (gmap gr4 string_of_int) in
+  
+  let () = export "graphdot.txt" graph in
+
+  let gr5 = gmap gr4 (fun a -> {flow = a ; capacity = a}) in
+  
+  let chemin = find_path gr5 [] 0 5 in
+  Printf.printf "%s" (Fordfulkerson.string_of_path chemin) ;
     
   ()
-

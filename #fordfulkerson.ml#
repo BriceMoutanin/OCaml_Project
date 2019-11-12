@@ -1,4 +1,4 @@
-type path = Graph.id list
+gitype path = Graph.id list
 
 type arc_flow = { flow : int ; capacity : int }
 

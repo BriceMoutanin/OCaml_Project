@@ -38,8 +38,10 @@ let () =
   let () = write_file "graph4.txt" (gmap gr4 string_of_int) in
   
   let () = export "graphdot.txt" graph in
+
+  let gr5 = gmap gr4 (fun a -> {flow = a ; capacity = a}) in
   
-  let chemin = find_path gr4 [] 0 5 in
+  let chemin = find_path gr5 [] 0 5 in
   Printf.printf "%s" (Fordfulkerson.string_of_path chemin) ;
     
   ()
