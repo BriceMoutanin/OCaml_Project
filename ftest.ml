@@ -26,22 +26,20 @@ let () =
   let graph = from_file infile in
 
   (* Rewrite the graph that has been read. *)
-  let () = write_file outfile graph in
-  
-  let gr2 = clone_nodes graph in 
-  let () = write_file "graph2.txt" gr2 in
-
-  let gr3 = gmap graph (fun s -> s ^ "55000") in
-  let () = write_file "graph3.txt" gr3 in
 
   let gr4 = add_arc (gmap graph int_of_string) 0 1 3 in
   let () = write_file "graph4.txt" (gmap gr4 string_of_int) in
   
   let () = export "graphdot.txt" graph in
 
-  let gr5 = gmap gr4 (fun a -> {flow = a ; capacity = a}) in
-  
+  let gr5 = create_residual_graph gr4 in
+  let () = write_file "graph5.txt" (gmap gr5 string_of_int) in
+
   let chemin = find_path gr5 [] 0 5 in
-  Printf.printf "%s" (Fordfulkerson.string_of_path chemin) ;
-    
+  let () = Printf.printf "%s\n" (string_of_path chemin) in
+
+  let flow_min_chemin = flow_min gr5 chemin in
+  let () = Printf.printf "%i\n" flow_min_chemin in
+  
+  
   ()

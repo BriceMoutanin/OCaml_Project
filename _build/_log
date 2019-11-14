@@ -19,6 +19,11 @@
 /home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt -c -o tools.cmi tools.mli # cached
 # Target: ftest.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:ftest.cmo, file:ftest.ml, implem, ocaml, quiet }
 /home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt -c -o ftest.cmo ftest.ml
++ /home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt -c -o ftest.cmo ftest.ml
+File "ftest.ml", line 18, characters 6-13:
+18 |   and outfile = Sys.argv.(4)
+           ^^^^^^^
+Warning 26: unused variable outfile.
 # Target: fordfulkerson.ml.depends, tags: { extension:ml, file:fordfulkerson.ml, ocaml, ocamldep, quiet }
 /home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamldep.opt -modules fordfulkerson.ml > fordfulkerson.ml.depends # cached
 # Target: fordfulkerson.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:fordfulkerson.cmo, file:fordfulkerson.ml, implem, ocaml, quiet }
@@ -36,5 +41,5 @@
 # Target: graph.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:graph.cmo, file:graph.ml, implem, ocaml, quiet }
 /home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt -c -o graph.cmo graph.ml # cached
 # Target: ftest.byte, tags: { byte, dont_link_with, extension:byte, file:ftest.byte, link, ocaml, program, quiet }
-/home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt graph.cmo fordfulkerson.cmo gfile.cmo tools.cmo ftest.cmo -o ftest.byte
+/home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt graph.cmo tools.cmo fordfulkerson.cmo gfile.cmo ftest.cmo -o ftest.byte
 # Compilation successful.
