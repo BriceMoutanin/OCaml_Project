@@ -1,6 +1,6 @@
 ### Starting build.
 # Target: ftest.ml.depends, tags: { extension:ml, file:ftest.ml, ocaml, ocamldep, quiet }
-/home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamldep.opt -modules ftest.ml > ftest.ml.depends
+/home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamldep.opt -modules ftest.ml > ftest.ml.depends # cached
 # Target: fordfulkerson.mli.depends, tags: { extension:mli, file:fordfulkerson.mli, ocaml, ocamldep, quiet }
 /home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamldep.opt -modules fordfulkerson.mli > fordfulkerson.mli.depends # cached
 # Target: graph.mli.depends, tags: { extension:mli, file:graph.mli, ocaml, ocamldep, quiet }
@@ -18,28 +18,23 @@
 # Target: tools.cmi, tags: { byte, compile, extension:mli, file:tools.mli, interf, ocaml, quiet }
 /home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt -c -o tools.cmi tools.mli # cached
 # Target: ftest.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:ftest.cmo, file:ftest.ml, implem, ocaml, quiet }
-/home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt -c -o ftest.cmo ftest.ml
-+ /home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt -c -o ftest.cmo ftest.ml
-File "ftest.ml", line 18, characters 6-13:
-18 |   and outfile = Sys.argv.(4)
-           ^^^^^^^
-Warning 26: unused variable outfile.
+/home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt -c -o ftest.cmo ftest.ml # cached
 # Target: fordfulkerson.ml.depends, tags: { extension:ml, file:fordfulkerson.ml, ocaml, ocamldep, quiet }
-/home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamldep.opt -modules fordfulkerson.ml > fordfulkerson.ml.depends # cached
-# Target: fordfulkerson.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:fordfulkerson.cmo, file:fordfulkerson.ml, implem, ocaml, quiet }
-/home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt -c -o fordfulkerson.cmo fordfulkerson.ml # cached
+/home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamldep.opt -modules fordfulkerson.ml > fordfulkerson.ml.depends
 # Target: gfile.ml.depends, tags: { extension:ml, file:gfile.ml, ocaml, ocamldep, quiet }
 /home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamldep.opt -modules gfile.ml > gfile.ml.depends # cached
 # Target: gfile.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:gfile.cmo, file:gfile.ml, implem, ocaml, quiet }
 /home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt -c -o gfile.cmo gfile.ml # cached
-# Target: tools.ml.depends, tags: { extension:ml, file:tools.ml, ocaml, ocamldep, quiet }
-/home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamldep.opt -modules tools.ml > tools.ml.depends # cached
-# Target: tools.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:tools.cmo, file:tools.ml, implem, ocaml, quiet }
-/home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt -c -o tools.cmo tools.ml # cached
 # Target: graph.ml.depends, tags: { extension:ml, file:graph.ml, ocaml, ocamldep, quiet }
 /home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamldep.opt -modules graph.ml > graph.ml.depends # cached
 # Target: graph.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:graph.cmo, file:graph.ml, implem, ocaml, quiet }
 /home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt -c -o graph.cmo graph.ml # cached
+# Target: tools.ml.depends, tags: { extension:ml, file:tools.ml, ocaml, ocamldep, quiet }
+/home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamldep.opt -modules tools.ml > tools.ml.depends # cached
+# Target: tools.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:tools.cmo, file:tools.ml, implem, ocaml, quiet }
+/home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt -c -o tools.cmo tools.ml # cached
+# Target: fordfulkerson.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:fordfulkerson.cmo, file:fordfulkerson.ml, implem, ocaml, quiet }
+/home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt -c -o fordfulkerson.cmo fordfulkerson.ml
 # Target: ftest.byte, tags: { byte, dont_link_with, extension:byte, file:ftest.byte, link, ocaml, program, quiet }
 /home/commetud/GEI/OCaml/.opam/4.08.1/bin/ocamlc.opt graph.cmo tools.cmo fordfulkerson.cmo gfile.cmo ftest.cmo -o ftest.byte
 # Compilation successful.

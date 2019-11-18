@@ -1,4 +1,3 @@
-
 open Graph
 
 (*clone_nodes gr : returns a new graph having the same nodes than gr, but no arc.*)

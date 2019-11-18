@@ -11,8 +11,12 @@ val create_residual_graph: int graph -> int graph
  *
  *  forbidden is a list of forbidden nodes (they have already been visited)
  *)
-val find_path: int graph -> id list -> id -> id -> path option
+val find_path: int graph -> id -> id -> path option
 
 val string_of_path: path option -> string
 
-val flow_min: int graph -> path option -> int
+val flow_min: int graph -> path -> int
+
+val actu_graph: int graph -> path -> int -> int graph
+
+val fordfulk: int graph -> id -> id -> int graph
