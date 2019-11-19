@@ -29,17 +29,26 @@ let rec find_path gr id1 id2 =
     						  	afficher_pile tl ;
     in
     afficher_pile forbidden ;
-	
+	 
+	 (* Parcours de tous les noeuds suivants *)
 	 match l_arcs_sortants with
+	 	(* S'il n'y a pas de noeuds suivants *)
 		| [] -> []
+		(* Si le noeud suivant a deja ete visite *)
 		| (id,lb)::tl when (List.exists (fun a -> a = id) forbidden) -> Printf.printf "%i a deja ete visite\n" id ; find_path_loop id_c forbidden tl
+		(* Si le noeud suivant est inatteignable (flot=0) *)
 		| (id,lb)::tl when lb=0 -> Printf.printf "%i est inatteignable\n" id ; find_path_loop id_c forbidden tl
+		(* Si on est arrive au dernier noeud *)
 		| (id,lb)::tl when id=id2 -> [id2]
+		(* S'il existe un autre noeud suivant plus loin qui offre un arc avec un meilleur flot *)
 		| (id,lb)::tl when (List.exists (fun (a,b) -> (b > lb) && not (find_path_loop a (id_c::forbidden) (out_arcs gr a)=[])) tl) -> find_path_loop id_c forbidden tl
-		| (id,lb)::tl -> Printf.printf "On choisit %i\n" id ; begin match (find_path_loop id (id_c::forbidden) (out_arcs gr id)) with
+		(* Si le noeud semble tre ok *)
+		| (id,lb)::tl -> Printf.printf "On choisit %i\n" id ; (* On vŽrifie quel chemin propose ce noeud *)
+																													begin match (find_path_loop id (id_c::forbidden) (out_arcs gr id)) with
+																														(* Si le chemin n'aboutit pas, on passe au noeud suivant *)
 																														| [] -> find_path_loop id_c (List.append (id_c::forbidden) [id]) tl
-																														| l when (List.exists (fun a -> a = id2) l) -> id::l
-																														| l -> l
+																														(* Si le chemin aboutit *)
+																														| l -> id::l
 																													end
 	
 	in
@@ -86,5 +95,3 @@ let rec fordfulk gr id1 id2 =
 	match (find_path gr id1 id2) with
 	| None -> gr
 	| Some p -> fordfulk (actu_graph gr p (flow_min gr p)) id1 id2
-	
-	
