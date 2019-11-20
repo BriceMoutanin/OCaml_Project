@@ -1,0 +1,965 @@
+Iteration de FordFulkerson
+
+
+Les noeuds suivants 0 restants sont : 2 (cout=1) ;  1 (cout=38) ;  6 (cout=2) ; 
+Pile :
+
+
+Les noeuds suivants 2 restants sont : 3 (cout=26) ; 
+Pile : 0 ; 
+
+
+Les noeuds suivants 3 restants sont : 5 (cout=8) ;  4 (cout=20) ;  7 (cout=1) ;  6 (cout=24) ; 
+Pile : 2 ;  0 ; 
+
+
+Les noeuds suivants 5 restants sont : 7 (cout=7) ; 
+Pile : 3 ;  2 ;  0 ; 
+On choisit 5
+On choisit 3
+On choisit 2
+Actualisation du chemin 0 -> 2 -> 3 -> 5 -> 7 avec un min 1Iteration de FordFulkerson
+
+
+Les noeuds suivants 0 restants sont : 2 (cout=0) ;  1 (cout=38) ;  6 (cout=2) ; 
+Pile :
+2 est inatteignable 
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=38) ;  6 (cout=2) ; 
+Pile :
+
+
+Les noeuds suivants 1 restants sont : 4 (cout=13) ;  3 (cout=10) ;  2 (cout=8) ; 
+Pile : 0 ; 
+
+
+Les noeuds suivants 4 restants sont : 5 (cout=1) ;  7 (cout=7) ;  2 (cout=2) ; 
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 5 restants sont : 7 (cout=6) ;  3 (cout=1) ; 
+Pile : 4 ;  1 ;  0 ; 
+On choisit 5
+On choisit 4
+On choisit 1
+Actualisation du chemin 0 -> 1 -> 4 -> 5 -> 7 avec un min 1Iteration de FordFulkerson
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=37) ;  2 (cout=0) ;  6 (cout=2) ; 
+Pile :
+
+
+Les noeuds suivants 1 restants sont : 4 (cout=12) ;  0 (cout=1) ;  3 (cout=10) ;  2 (cout=8) ; 
+Pile : 0 ; 
+
+
+Les noeuds suivants 4 restants sont : 5 (cout=0) ;  1 (cout=1) ;  7 (cout=7) ;  2 (cout=2) ; 
+Pile : 1 ;  0 ; 
+5 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont : 1 (cout=1) ;  7 (cout=7) ;  2 (cout=2) ; 
+Pile : 1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 7 (cout=7) ;  2 (cout=2) ; 
+Pile : 1 ;  0 ; 
+On choisit 4
+On choisit 1
+Actualisation du chemin 0 -> 1 -> 4 -> 7 avec un min 7Iteration de FordFulkerson
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=30) ;  2 (cout=0) ;  6 (cout=2) ; 
+Pile :
+
+
+Les noeuds suivants 1 restants sont : 4 (cout=5) ;  0 (cout=8) ;  3 (cout=10) ;  2 (cout=8) ; 
+Pile : 0 ; 
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=30) ;  2 (cout=0) ;  6 (cout=2) ; 
+Pile : 1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 0 restants sont : 2 (cout=0) ;  6 (cout=2) ; 
+Pile : 1 ;  0 ; 
+2 est inatteignable 
+
+
+Les noeuds suivants 0 restants sont : 6 (cout=2) ; 
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 6 restants sont : 7 (cout=27) ; 
+Pile : 0 ;  1 ;  0 ; 
+On choisit 6
+Il existe un meilleur noeud 
+
+
+Les noeuds suivants 1 restants sont : 0 (cout=8) ;  3 (cout=10) ;  2 (cout=8) ; 
+Pile : 0 ; 
+0 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 3 (cout=10) ;  2 (cout=8) ; 
+Pile : 0 ; 
+
+
+Les noeuds suivants 3 restants sont : 5 (cout=7) ;  2 (cout=1) ;  4 (cout=20) ;  7 (cout=1) ;  6 (cout=24) ; 
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 5 restants sont : 7 (cout=5) ;  4 (cout=1) ;  3 (cout=1) ; 
+Pile : 3 ;  1 ;  0 ; 
+On choisit 5
+On choisit 3
+On choisit 1
+Actualisation du chemin 0 -> 1 -> 3 -> 5 -> 7 avec un min 5Iteration de FordFulkerson
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=25) ;  2 (cout=0) ;  6 (cout=2) ; 
+Pile :
+
+
+Les noeuds suivants 1 restants sont : 3 (cout=5) ;  0 (cout=13) ;  4 (cout=5) ;  2 (cout=8) ; 
+Pile : 0 ; 
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=25) ;  2 (cout=0) ;  6 (cout=2) ; 
+Pile : 1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 0 restants sont : 2 (cout=0) ;  6 (cout=2) ; 
+Pile : 1 ;  0 ; 
+2 est inatteignable 
+
+
+Les noeuds suivants 0 restants sont : 6 (cout=2) ; 
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 6 restants sont : 7 (cout=27) ; 
+Pile : 0 ;  1 ;  0 ; 
+On choisit 6
+Il existe un meilleur noeud 
+
+
+Les noeuds suivants 1 restants sont : 0 (cout=13) ;  4 (cout=5) ;  2 (cout=8) ; 
+Pile : 0 ; 
+0 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 4 (cout=5) ;  2 (cout=8) ; 
+Pile : 0 ; 
+
+
+Les noeuds suivants 4 restants sont : 7 (cout=0) ;  1 (cout=8) ;  5 (cout=0) ;  2 (cout=2) ; 
+Pile : 1 ;  0 ; 
+7 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont : 1 (cout=8) ;  5 (cout=0) ;  2 (cout=2) ; 
+Pile : 1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 5 (cout=0) ;  2 (cout=2) ; 
+Pile : 1 ;  0 ; 
+5 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont : 2 (cout=2) ; 
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 2 restants sont : 3 (cout=25) ;  0 (cout=1) ; 
+Pile : 4 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 3 restants sont : 5 (cout=2) ;  1 (cout=5) ;  2 (cout=1) ;  4 (cout=20) ;  7 (cout=1) ;  6 (cout=24) ; 
+Pile : 2 ;  4 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 1 restants sont : 3 (cout=5) ;  0 (cout=13) ;  4 (cout=5) ;  2 (cout=8) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+3 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 0 (cout=13) ;  4 (cout=5) ;  2 (cout=8) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+0 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 4 (cout=5) ;  2 (cout=8) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+4 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 2 (cout=8) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+2 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont :
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 4 restants sont : 7 (cout=0) ;  1 (cout=8) ;  5 (cout=0) ;  2 (cout=2) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+7 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont : 1 (cout=8) ;  5 (cout=0) ;  2 (cout=2) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 5 (cout=0) ;  2 (cout=2) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+5 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont : 2 (cout=2) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+2 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont :
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 5 restants sont : 7 (cout=0) ;  3 (cout=6) ;  4 (cout=1) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+7 est inatteignable 
+
+
+Les noeuds suivants 5 restants sont : 3 (cout=6) ;  4 (cout=1) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+3 a deja ete visite 
+
+
+Les noeuds suivants 5 restants sont : 4 (cout=1) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+4 a deja ete visite 
+
+
+Les noeuds suivants 5 restants sont :
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 3 restants sont : 1 (cout=5) ;  2 (cout=1) ;  4 (cout=20) ;  7 (cout=1) ;  6 (cout=24) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ;  5 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 3 restants sont : 2 (cout=1) ;  4 (cout=20) ;  7 (cout=1) ;  6 (cout=24) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ;  5 ; 
+2 a deja ete visite 
+
+
+Les noeuds suivants 3 restants sont : 4 (cout=20) ;  7 (cout=1) ;  6 (cout=24) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ;  5 ; 
+4 a deja ete visite 
+
+
+Les noeuds suivants 3 restants sont : 7 (cout=1) ;  6 (cout=24) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ;  5 ; 
+On choisit 3
+On choisit 2
+On choisit 4
+On choisit 1
+Actualisation du chemin 0 -> 1 -> 4 -> 2 -> 3 -> 7 avec un min 1Iteration de FordFulkerson
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=24) ;  2 (cout=0) ;  6 (cout=2) ; 
+Pile :
+
+
+Les noeuds suivants 1 restants sont : 4 (cout=4) ;  0 (cout=14) ;  3 (cout=5) ;  2 (cout=8) ; 
+Pile : 0 ; 
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=24) ;  2 (cout=0) ;  6 (cout=2) ; 
+Pile : 1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 0 restants sont : 2 (cout=0) ;  6 (cout=2) ; 
+Pile : 1 ;  0 ; 
+2 est inatteignable 
+
+
+Les noeuds suivants 0 restants sont : 6 (cout=2) ; 
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 6 restants sont : 7 (cout=27) ; 
+Pile : 0 ;  1 ;  0 ; 
+On choisit 6
+Il existe un meilleur noeud 
+
+
+Les noeuds suivants 1 restants sont : 0 (cout=14) ;  3 (cout=5) ;  2 (cout=8) ; 
+Pile : 0 ; 
+0 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 3 (cout=5) ;  2 (cout=8) ; 
+Pile : 0 ; 
+
+
+Les noeuds suivants 3 restants sont : 7 (cout=0) ;  2 (cout=2) ;  5 (cout=2) ;  1 (cout=5) ;  4 (cout=20) ;  6 (cout=24) ; 
+Pile : 1 ;  0 ; 
+7 est inatteignable 
+
+
+Les noeuds suivants 3 restants sont : 2 (cout=2) ;  5 (cout=2) ;  1 (cout=5) ;  4 (cout=20) ;  6 (cout=24) ; 
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 1 restants sont : 4 (cout=4) ;  0 (cout=14) ;  3 (cout=5) ;  2 (cout=8) ; 
+Pile : 3 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=24) ;  2 (cout=0) ;  6 (cout=2) ; 
+Pile : 1 ;  3 ;  1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 0 restants sont : 2 (cout=0) ;  6 (cout=2) ; 
+Pile : 1 ;  3 ;  1 ;  0 ; 
+2 est inatteignable 
+
+
+Les noeuds suivants 0 restants sont : 6 (cout=2) ; 
+Pile : 1 ;  3 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 6 restants sont : 7 (cout=27) ; 
+Pile : 0 ;  1 ;  3 ;  1 ;  0 ; 
+On choisit 6
+Il existe un meilleur noeud 
+
+
+Les noeuds suivants 1 restants sont : 0 (cout=14) ;  3 (cout=5) ;  2 (cout=8) ; 
+Pile : 3 ;  1 ;  0 ; 
+0 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 3 (cout=5) ;  2 (cout=8) ; 
+Pile : 3 ;  1 ;  0 ; 
+3 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 2 (cout=8) ; 
+Pile : 3 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 2 restants sont : 3 (cout=24) ;  4 (cout=1) ;  0 (cout=1) ; 
+Pile : 1 ;  3 ;  1 ;  0 ; 
+3 a deja ete visite 
+
+
+Les noeuds suivants 2 restants sont : 4 (cout=1) ;  0 (cout=1) ; 
+Pile : 1 ;  3 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 4 restants sont : 2 (cout=1) ;  1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 2 ;  1 ;  3 ;  1 ;  0 ; 
+2 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 2 ;  1 ;  3 ;  1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 7 (cout=0) ;  5 (cout=0) ; 
+Pile : 2 ;  1 ;  3 ;  1 ;  0 ; 
+7 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont : 5 (cout=0) ; 
+Pile : 2 ;  1 ;  3 ;  1 ;  0 ; 
+5 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont :
+Pile : 2 ;  1 ;  3 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 2 restants sont : 0 (cout=1) ; 
+Pile : 2 ;  1 ;  3 ;  1 ;  0 ;  4 ; 
+0 a deja ete visite 
+
+
+Les noeuds suivants 2 restants sont :
+Pile : 2 ;  1 ;  3 ;  1 ;  0 ;  4 ; 
+
+
+Les noeuds suivants 1 restants sont :
+Pile : 1 ;  3 ;  1 ;  0 ;  2 ; 
+
+
+Les noeuds suivants 2 restants sont : 3 (cout=24) ;  4 (cout=1) ;  0 (cout=1) ; 
+Pile : 3 ;  1 ;  0 ; 
+3 a deja ete visite 
+
+
+Les noeuds suivants 2 restants sont : 4 (cout=1) ;  0 (cout=1) ; 
+Pile : 3 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 4 restants sont : 2 (cout=1) ;  1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 2 ;  3 ;  1 ;  0 ; 
+2 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 2 ;  3 ;  1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 7 (cout=0) ;  5 (cout=0) ; 
+Pile : 2 ;  3 ;  1 ;  0 ; 
+7 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont : 5 (cout=0) ; 
+Pile : 2 ;  3 ;  1 ;  0 ; 
+5 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont :
+Pile : 2 ;  3 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 2 restants sont : 0 (cout=1) ; 
+Pile : 2 ;  3 ;  1 ;  0 ;  4 ; 
+0 a deja ete visite 
+
+
+Les noeuds suivants 2 restants sont :
+Pile : 2 ;  3 ;  1 ;  0 ;  4 ; 
+
+
+Les noeuds suivants 3 restants sont : 5 (cout=2) ;  1 (cout=5) ;  4 (cout=20) ;  6 (cout=24) ; 
+Pile : 3 ;  1 ;  0 ;  2 ; 
+
+
+Les noeuds suivants 1 restants sont : 4 (cout=4) ;  0 (cout=14) ;  3 (cout=5) ;  2 (cout=8) ; 
+Pile : 3 ;  3 ;  1 ;  0 ;  2 ; 
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=24) ;  2 (cout=0) ;  6 (cout=2) ; 
+Pile : 1 ;  3 ;  3 ;  1 ;  0 ;  2 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 0 restants sont : 2 (cout=0) ;  6 (cout=2) ; 
+Pile : 1 ;  3 ;  3 ;  1 ;  0 ;  2 ; 
+2 a deja ete visite 
+
+
+Les noeuds suivants 0 restants sont : 6 (cout=2) ; 
+Pile : 1 ;  3 ;  3 ;  1 ;  0 ;  2 ; 
+
+
+Les noeuds suivants 6 restants sont : 7 (cout=27) ; 
+Pile : 0 ;  1 ;  3 ;  3 ;  1 ;  0 ;  2 ; 
+On choisit 6
+Il existe un meilleur noeud 
+
+
+Les noeuds suivants 1 restants sont : 0 (cout=14) ;  3 (cout=5) ;  2 (cout=8) ; 
+Pile : 3 ;  3 ;  1 ;  0 ;  2 ; 
+0 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 3 (cout=5) ;  2 (cout=8) ; 
+Pile : 3 ;  3 ;  1 ;  0 ;  2 ; 
+3 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 2 (cout=8) ; 
+Pile : 3 ;  3 ;  1 ;  0 ;  2 ; 
+2 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont :
+Pile : 3 ;  3 ;  1 ;  0 ;  2 ; 
+
+
+Les noeuds suivants 5 restants sont : 7 (cout=0) ;  3 (cout=6) ;  4 (cout=1) ; 
+Pile : 3 ;  3 ;  1 ;  0 ;  2 ; 
+7 est inatteignable 
+
+
+Les noeuds suivants 5 restants sont : 3 (cout=6) ;  4 (cout=1) ; 
+Pile : 3 ;  3 ;  1 ;  0 ;  2 ; 
+3 a deja ete visite 
+
+
+Les noeuds suivants 5 restants sont : 4 (cout=1) ; 
+Pile : 3 ;  3 ;  1 ;  0 ;  2 ; 
+
+
+Les noeuds suivants 4 restants sont : 2 (cout=1) ;  1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 5 ;  3 ;  3 ;  1 ;  0 ;  2 ; 
+2 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 5 ;  3 ;  3 ;  1 ;  0 ;  2 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 7 (cout=0) ;  5 (cout=0) ; 
+Pile : 5 ;  3 ;  3 ;  1 ;  0 ;  2 ; 
+7 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont : 5 (cout=0) ; 
+Pile : 5 ;  3 ;  3 ;  1 ;  0 ;  2 ; 
+5 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont :
+Pile : 5 ;  3 ;  3 ;  1 ;  0 ;  2 ; 
+
+
+Les noeuds suivants 5 restants sont :
+Pile : 5 ;  3 ;  3 ;  1 ;  0 ;  2 ;  4 ; 
+
+
+Les noeuds suivants 3 restants sont : 1 (cout=5) ;  4 (cout=20) ;  6 (cout=24) ; 
+Pile : 3 ;  3 ;  1 ;  0 ;  2 ;  5 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 3 restants sont : 4 (cout=20) ;  6 (cout=24) ; 
+Pile : 3 ;  3 ;  1 ;  0 ;  2 ;  5 ; 
+
+
+Les noeuds suivants 4 restants sont : 2 (cout=1) ;  1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 3 ;  3 ;  3 ;  1 ;  0 ;  2 ;  5 ; 
+2 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 3 ;  3 ;  3 ;  1 ;  0 ;  2 ;  5 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 7 (cout=0) ;  5 (cout=0) ; 
+Pile : 3 ;  3 ;  3 ;  1 ;  0 ;  2 ;  5 ; 
+7 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont : 5 (cout=0) ; 
+Pile : 3 ;  3 ;  3 ;  1 ;  0 ;  2 ;  5 ; 
+5 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont :
+Pile : 3 ;  3 ;  3 ;  1 ;  0 ;  2 ;  5 ; 
+
+
+Les noeuds suivants 3 restants sont : 6 (cout=24) ; 
+Pile : 3 ;  3 ;  3 ;  1 ;  0 ;  2 ;  5 ;  4 ; 
+
+
+Les noeuds suivants 6 restants sont : 7 (cout=27) ; 
+Pile : 3 ;  3 ;  3 ;  3 ;  1 ;  0 ;  2 ;  5 ;  4 ; 
+On choisit 6
+On choisit 3
+On choisit 1
+Actualisation du chemin 0 -> 1 -> 3 -> 6 -> 7 avec un min 5Iteration de FordFulkerson
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=19) ;  2 (cout=0) ;  6 (cout=2) ; 
+Pile :
+
+
+Les noeuds suivants 1 restants sont : 3 (cout=0) ;  0 (cout=19) ;  4 (cout=4) ;  2 (cout=8) ; 
+Pile : 0 ; 
+3 est inatteignable 
+
+
+Les noeuds suivants 1 restants sont : 0 (cout=19) ;  4 (cout=4) ;  2 (cout=8) ; 
+Pile : 0 ; 
+0 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 4 (cout=4) ;  2 (cout=8) ; 
+Pile : 0 ; 
+
+
+Les noeuds suivants 4 restants sont : 2 (cout=1) ;  1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 1 restants sont : 3 (cout=0) ;  0 (cout=19) ;  4 (cout=4) ;  2 (cout=8) ; 
+Pile : 4 ;  1 ;  0 ; 
+3 est inatteignable 
+
+
+Les noeuds suivants 1 restants sont : 0 (cout=19) ;  4 (cout=4) ;  2 (cout=8) ; 
+Pile : 4 ;  1 ;  0 ; 
+0 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 4 (cout=4) ;  2 (cout=8) ; 
+Pile : 4 ;  1 ;  0 ; 
+4 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 2 (cout=8) ; 
+Pile : 4 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 2 restants sont : 3 (cout=24) ;  4 (cout=1) ;  0 (cout=1) ; 
+Pile : 1 ;  4 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 3 restants sont : 6 (cout=19) ;  1 (cout=10) ;  7 (cout=0) ;  2 (cout=2) ;  5 (cout=2) ;  4 (cout=20) ; 
+Pile : 2 ;  1 ;  4 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 4 restants sont : 2 (cout=1) ;  1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 3 ;  2 ;  1 ;  4 ;  1 ;  0 ; 
+2 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 3 ;  2 ;  1 ;  4 ;  1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 7 (cout=0) ;  5 (cout=0) ; 
+Pile : 3 ;  2 ;  1 ;  4 ;  1 ;  0 ; 
+7 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont : 5 (cout=0) ; 
+Pile : 3 ;  2 ;  1 ;  4 ;  1 ;  0 ; 
+5 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont :
+Pile : 3 ;  2 ;  1 ;  4 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 6 restants sont : 7 (cout=22) ;  3 (cout=5) ; 
+Pile : 3 ;  2 ;  1 ;  4 ;  1 ;  0 ; 
+On choisit 6
+On choisit 3
+On choisit 2
+Il existe un meilleur noeud 
+
+
+Les noeuds suivants 4 restants sont : 1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 7 (cout=0) ;  5 (cout=0) ; 
+Pile : 1 ;  0 ; 
+7 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont : 5 (cout=0) ; 
+Pile : 1 ;  0 ; 
+5 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont :
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 1 restants sont : 2 (cout=8) ; 
+Pile : 1 ;  0 ;  4 ; 
+
+
+Les noeuds suivants 2 restants sont : 3 (cout=24) ;  4 (cout=1) ;  0 (cout=1) ; 
+Pile : 1 ;  1 ;  0 ;  4 ; 
+
+
+Les noeuds suivants 3 restants sont : 6 (cout=19) ;  1 (cout=10) ;  7 (cout=0) ;  2 (cout=2) ;  5 (cout=2) ;  4 (cout=20) ; 
+Pile : 2 ;  1 ;  1 ;  0 ;  4 ; 
+
+
+Les noeuds suivants 4 restants sont : 2 (cout=1) ;  1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 3 ;  2 ;  1 ;  1 ;  0 ;  4 ; 
+2 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 3 ;  2 ;  1 ;  1 ;  0 ;  4 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 7 (cout=0) ;  5 (cout=0) ; 
+Pile : 3 ;  2 ;  1 ;  1 ;  0 ;  4 ; 
+7 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont : 5 (cout=0) ; 
+Pile : 3 ;  2 ;  1 ;  1 ;  0 ;  4 ; 
+5 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont :
+Pile : 3 ;  2 ;  1 ;  1 ;  0 ;  4 ; 
+
+
+Les noeuds suivants 6 restants sont : 7 (cout=22) ;  3 (cout=5) ; 
+Pile : 3 ;  2 ;  1 ;  1 ;  0 ;  4 ; 
+On choisit 6
+On choisit 3
+On choisit 2
+On choisit 1
+Actualisation du chemin 0 -> 1 -> 2 -> 3 -> 6 -> 7 avec un min 8Iteration de FordFulkerson
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=11) ;  2 (cout=0) ;  6 (cout=2) ; 
+Pile :
+
+
+Les noeuds suivants 1 restants sont : 2 (cout=0) ;  0 (cout=27) ;  3 (cout=0) ;  4 (cout=4) ; 
+Pile : 0 ; 
+2 est inatteignable 
+
+
+Les noeuds suivants 1 restants sont : 0 (cout=27) ;  3 (cout=0) ;  4 (cout=4) ; 
+Pile : 0 ; 
+0 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 3 (cout=0) ;  4 (cout=4) ; 
+Pile : 0 ; 
+3 est inatteignable 
+
+
+Les noeuds suivants 1 restants sont : 4 (cout=4) ; 
+Pile : 0 ; 
+
+
+Les noeuds suivants 4 restants sont : 2 (cout=1) ;  1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 1 restants sont : 2 (cout=0) ;  0 (cout=27) ;  3 (cout=0) ;  4 (cout=4) ; 
+Pile : 4 ;  1 ;  0 ; 
+2 est inatteignable 
+
+
+Les noeuds suivants 1 restants sont : 0 (cout=27) ;  3 (cout=0) ;  4 (cout=4) ; 
+Pile : 4 ;  1 ;  0 ; 
+0 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 3 (cout=0) ;  4 (cout=4) ; 
+Pile : 4 ;  1 ;  0 ; 
+3 est inatteignable 
+
+
+Les noeuds suivants 1 restants sont : 4 (cout=4) ; 
+Pile : 4 ;  1 ;  0 ; 
+4 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont :
+Pile : 4 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 2 restants sont : 3 (cout=16) ;  1 (cout=8) ;  4 (cout=1) ;  0 (cout=1) ; 
+Pile : 4 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 3 restants sont : 6 (cout=11) ;  2 (cout=10) ;  1 (cout=10) ;  7 (cout=0) ;  5 (cout=2) ;  4 (cout=20) ; 
+Pile : 2 ;  4 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 4 restants sont : 2 (cout=1) ;  1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+2 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 1 (cout=9) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 7 (cout=0) ;  5 (cout=0) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+7 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont : 5 (cout=0) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+5 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont :
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 6 restants sont : 7 (cout=14) ;  3 (cout=13) ; 
+Pile : 3 ;  2 ;  4 ;  1 ;  0 ; 
+On choisit 6
+On choisit 3
+On choisit 2
+On choisit 4
+On choisit 1
+Actualisation du chemin 0 -> 1 -> 4 -> 2 -> 3 -> 6 -> 7 avec un min 1Iteration de FordFulkerson
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=10) ;  2 (cout=0) ;  6 (cout=2) ; 
+Pile :
+
+
+Les noeuds suivants 1 restants sont : 4 (cout=3) ;  0 (cout=28) ;  2 (cout=0) ;  3 (cout=0) ; 
+Pile : 0 ; 
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=10) ;  2 (cout=0) ;  6 (cout=2) ; 
+Pile : 1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 0 restants sont : 2 (cout=0) ;  6 (cout=2) ; 
+Pile : 1 ;  0 ; 
+2 est inatteignable 
+
+
+Les noeuds suivants 0 restants sont : 6 (cout=2) ; 
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 6 restants sont : 7 (cout=13) ;  3 (cout=14) ; 
+Pile : 0 ;  1 ;  0 ; 
+On choisit 6
+Il existe un meilleur noeud 
+
+
+Les noeuds suivants 1 restants sont : 0 (cout=28) ;  2 (cout=0) ;  3 (cout=0) ; 
+Pile : 0 ; 
+0 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 2 (cout=0) ;  3 (cout=0) ; 
+Pile : 0 ; 
+2 est inatteignable 
+
+
+Les noeuds suivants 1 restants sont : 3 (cout=0) ; 
+Pile : 0 ; 
+3 est inatteignable 
+
+
+Les noeuds suivants 1 restants sont :
+Pile : 0 ; 
+
+
+Les noeuds suivants 0 restants sont : 2 (cout=0) ;  6 (cout=2) ; 
+Pile : 0 ;  1 ; 
+2 est inatteignable 
+
+
+Les noeuds suivants 0 restants sont : 6 (cout=2) ; 
+Pile : 0 ;  1 ; 
+
+
+Les noeuds suivants 6 restants sont : 7 (cout=13) ;  3 (cout=14) ; 
+Pile : 0 ;  0 ;  1 ; 
+On choisit 6
+Actualisation du chemin 0 -> 6 -> 7 avec un min 2Iteration de FordFulkerson
+
+
+Les noeuds suivants 0 restants sont : 6 (cout=0) ;  1 (cout=10) ;  2 (cout=0) ; 
+Pile :
+6 est inatteignable 
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=10) ;  2 (cout=0) ; 
+Pile :
+
+
+Les noeuds suivants 1 restants sont : 4 (cout=3) ;  0 (cout=28) ;  2 (cout=0) ;  3 (cout=0) ; 
+Pile : 0 ; 
+
+
+Les noeuds suivants 0 restants sont : 6 (cout=0) ;  1 (cout=10) ;  2 (cout=0) ; 
+Pile : 1 ;  0 ; 
+6 est inatteignable 
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=10) ;  2 (cout=0) ; 
+Pile : 1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 0 restants sont : 2 (cout=0) ; 
+Pile : 1 ;  0 ; 
+2 est inatteignable 
+
+
+Les noeuds suivants 0 restants sont :
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 4 restants sont : 2 (cout=0) ;  1 (cout=10) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 1 ;  0 ; 
+2 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont : 1 (cout=10) ;  7 (cout=0) ;  5 (cout=0) ; 
+Pile : 1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 4 restants sont : 7 (cout=0) ;  5 (cout=0) ; 
+Pile : 1 ;  0 ; 
+7 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont : 5 (cout=0) ; 
+Pile : 1 ;  0 ; 
+5 est inatteignable 
+
+
+Les noeuds suivants 4 restants sont :
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 1 restants sont : 0 (cout=28) ;  2 (cout=0) ;  3 (cout=0) ; 
+Pile : 1 ;  0 ;  4 ; 
+0 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont : 2 (cout=0) ;  3 (cout=0) ; 
+Pile : 1 ;  0 ;  4 ; 
+2 est inatteignable 
+
+
+Les noeuds suivants 1 restants sont : 3 (cout=0) ; 
+Pile : 1 ;  0 ;  4 ; 
+3 est inatteignable 
+
+
+Les noeuds suivants 1 restants sont :
+Pile : 1 ;  0 ;  4 ; 
+
+
+Les noeuds suivants 0 restants sont : 2 (cout=0) ; 
+Pile : 0 ;  1 ; 
+2 est inatteignable 
+
+
+Les noeuds suivants 0 restants sont :
+Pile : 0 ;  1 ; 

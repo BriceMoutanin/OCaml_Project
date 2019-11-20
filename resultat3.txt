@@ -1,0 +1,78 @@
+Iteration de FordFulkerson
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=10) ; 
+Pile :
+
+
+Les noeuds suivants 1 restants sont : 2 (cout=10) ; 
+Pile : 0 ; 
+
+
+Les noeuds suivants 2 restants sont : 4 (cout=7) ; 
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 4 restants sont : 3 (cout=5) ;  5 (cout=15) ; 
+Pile : 2 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 3 restants sont : 1 (cout=5) ; 
+Pile : 4 ;  2 ;  1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 3 restants sont :
+Pile : 4 ;  2 ;  1 ;  0 ; 
+
+
+Les noeuds suivants 4 restants sont : 5 (cout=15) ; 
+Pile : 4 ;  2 ;  1 ;  0 ;  3 ; 
+On choisit 4
+On choisit 2
+On choisit 1
+Actualisation du chemin 0 -> 1 -> 2 -> 4 -> 5 avec un min 7Iteration de FordFulkerson
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=3) ; 
+Pile :
+
+
+Les noeuds suivants 1 restants sont : 2 (cout=3) ;  0 (cout=7) ; 
+Pile : 0 ; 
+
+
+Les noeuds suivants 0 restants sont : 1 (cout=3) ; 
+Pile : 1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 0 restants sont :
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 2 restants sont : 4 (cout=0) ;  1 (cout=7) ; 
+Pile : 1 ;  0 ; 
+4 est inatteignable 
+
+
+Les noeuds suivants 2 restants sont : 1 (cout=7) ; 
+Pile : 1 ;  0 ; 
+1 a deja ete visite 
+
+
+Les noeuds suivants 2 restants sont :
+Pile : 1 ;  0 ; 
+
+
+Les noeuds suivants 1 restants sont : 0 (cout=7) ; 
+Pile : 1 ;  0 ;  2 ; 
+0 a deja ete visite 
+
+
+Les noeuds suivants 1 restants sont :
+Pile : 1 ;  0 ;  2 ; 
+
+
+Les noeuds suivants 0 restants sont :
+Pile : 0 ;  1 ; 

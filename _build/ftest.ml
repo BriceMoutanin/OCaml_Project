@@ -25,41 +25,13 @@ let () =
 
   (* Open file *)
   let graph = from_file infile in
-
-  (* Rewrite the graph that has been read. *)
-
-  let gr4 = add_arc (gmap graph int_of_string) 0 1 3 in
-  let () = write_file "graph4.txt" (gmap gr4 string_of_int) in
   
   let () = export "graphdot.txt" graph in
-
-  (*let gr5 = create_residual_graph gr4 in
-  let () = write_file "graph5.txt" (gmap gr5 string_of_int) in
-
-  let gr5_actu = fordfulk gr5 0 5 in
-  let () = write_file "graph5_actu.txt" (gmap gr5_actu string_of_int) in*)
   
-  let gr5 = new_node empty_graph 0 in
-  let gr5 = new_node gr5 1 in
-  let gr5 = new_node gr5 2 in
-  let gr5 = new_node gr5 3 in
-  let gr5 = new_node gr5 4 in
-  let gr5 = new_node gr5 5 in
-  let gr5 = new_node gr5 6 in
-  let gr5 = new_arc gr5 0 1 4 in
-  let gr5 = new_arc gr5 0 5 9 in
-  let gr5 = new_arc gr5 1 2 2 in
-  let gr5 = new_arc gr5 1 4 3 in
-  let gr5 = new_arc gr5 5 4 8 in
-  let gr5 = new_arc gr5 4 3 1 in
-  let gr5 = new_arc gr5 2 3 4 in
-  let gr5 = new_arc gr5 2 6 10 in
-  let gr5 = new_arc gr5 3 6 1 in
-  let gr5 = new_arc gr5 4 6 3 in
-  let gr5 = create_residual_graph gr5 in
-  let () = write_file "graph5.txt" (gmap gr5 string_of_int) in
+  let () = write_file "graph_avant_actu.txt" graph in
   
-  let gr5_actu = fordfulk gr5 0 6 in
-  let () = write_file "graph5_actu.txt" (gmap gr5_actu string_of_int) in
+  let gr_actu = gmap graph int_of_string in
+  let gr_actu = fordfulk gr_actu _source _sink in
+  let () = write_file outfile (gmap gr_actu string_of_int) in
   
   ()

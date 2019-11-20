@@ -3,82 +3,68 @@ open Tools
 
 type path = id list
 
-(* Un peu plus tard, trouver pourquoi cette fonction ne sert a rien *)
-let create_residual_graph gr = e_fold gr (fun gr id1 id2 lb -> (add_arc gr id2 id1 0)) gr
+(* find_path gr id1 id2 
+ *    returns None if no path can be found.
+ *    returns Some p if a path p from id1 to id2 has been found. 
+*)
+let rec find_path gr id1 id2 =
+  let rec find_path_loop id_c forbidden l_arcs_sortants =
 
-let find_path gr ident1 ident2 =
-	Printf.printf "Recherche de chemin...\n" ;
-  let rec find_path_loop id_liste id1 =
-
-    (* Liste de tous les arcs sortants du noeud courant *)
-    let liste_arcs = out_arcs gr id1 in
-    
-    Printf.printf "Liste des noeuds interdits : " ;
-    let rec afficher_pile = function
-      | [] -> Printf.printf "\n" ;
-      | id :: tl -> Printf.printf "%i " id ; afficher_pile tl ;
-    in
-    afficher_pile id_liste ;
-    
-    Printf.printf "Les noeuds suivant %i sont : " id1 ;
+    (* Affichage noeuds suivants *)
+    Printf.printf "\n\nLes noeuds suivants %i restants sont :" id_c ;
     let rec afficher_liste = function
       | [] -> Printf.printf "\n" ;
-      | (id,lb) :: tl -> Printf.printf "%i (cout=%i) " id lb ; afficher_liste tl ;
+      | (id,lb)::tl -> Printf.printf " %i (cout=%i) ; " id lb ; afficher_liste tl
     in
-    afficher_liste liste_arcs ;
+    afficher_liste l_arcs_sortants ;
 
-    let rec parcours_liste = function
-      | [] -> None
-      | (id,lb) :: tl when lb=0 -> parcours_liste tl
-      | (id,lb) :: tl when (List.exists (fun a -> a = id) id_liste) -> parcours_liste tl
-      | (id,lb) :: tl ->
-        match (find_path_loop (id1::id_liste) id) with
-        | None -> parcours_liste tl
-        | Some p -> Some (id1::p)
+    (* Affichage forbidden *)
+    Printf.printf "Pile :" ;
+    let rec afficher_pile = function
+      | [] -> Printf.printf "\n" ;
+      | id::tl -> Printf.printf " %i ; " id ; afficher_pile tl
     in
-    parcours_liste liste_arcs
-  in
-  find_path_loop [ident1] ident1
-
-    (*(* On cherche un arc sortant valide *)
-    let rec find_next_node liste_arcs_sortants =
-      match liste_arcs_sortants with
-      (* S'il n'y a pas de noeuds suivants *)
-      | [] -> None
-      (* Si le noeud suivant a deja ete visite *)
-      | (id,lb) :: tl when (List.exists (fun a -> a = id) id_liste) -> Printf.printf "%i a deja ete visite\n" id ; find_next_node tl
-      (* Si le noeud suivant implique un arc a 0 *)                              
-      | (id,lb) :: tl when lb = 0 -> Printf.printf "%i ne peut pas etre atteint\n" id ; find_next_node tl
-      (* Sinon *)
-      | (id,lb) :: tl -> Printf.printf "On choisit %i\n" id ; Some id
-    in
-
-    (* On traite l'arc sortant *)
-    match (find_next_node liste_arcs) with
-    (* S'il n'y avait pas d'arc sortant *)
-    | None ->
-      begin match id_liste with
-        | pere :: tl -> find_path_loop (id1::tl) pere
-        | [] -> []
+    afficher_pile forbidden ;
+    
+    (* Parcours de tous les noeuds suivants *)
+    match l_arcs_sortants with
+    (* S'il n'y a pas de noeuds suivants *)
+    | [] -> []
+    (* Si le noeud suivant a deja ete visite *)
+    | (id,lb)::tl when (List.exists (fun a -> a = id) forbidden) -> Printf.printf "%i a deja ete visite \n" id ; find_path_loop id_c forbidden tl
+    (* Si le noeud suivant est inatteignable (flot=0) *)
+    | (id,lb)::tl when lb=0 -> Printf.printf "%i est inatteignable \n" id ; find_path_loop id_c forbidden tl
+    (* Si on est arrive au dernier noeud *)
+    | (id,lb)::tl when id=id2 -> [id2]
+    (* S'il existe un noeud suivant (non interdit) plus loin dans la liste qui offre un arc avec un meilleur flot *)
+    | (id,lb)::tl when (List.exists (fun (a,b) -> (List.exists (fun i -> i=a) forbidden) && (b > lb) && not (find_path_loop a (id_c::forbidden) (out_arcs gr a)=[])) tl) -> Printf.printf "Il existe un meilleur noeud \n" ; find_path_loop id_c forbidden tl
+    (* Si le noeud suivant semble etre ok *)
+    | (id,lb)::tl ->(* On verifie quel chemin propose ce noeud *)
+      begin match (find_path_loop id (id_c::forbidden) (out_arcs gr id)) with
+	(* Si le chemin n'aboutit pas, on passe au noeud suivant *)
+	| [] -> find_path_loop id_c (List.append (id_c::forbidden) [id]) tl
+	(* Si le chemin aboutit *)
+	| l -> Printf.printf "On choisit %i\n" id ; id::l
       end
-    (* Si l'arc sortant amene au noeud de destination *)
-    | Some id when id = ident2 -> [id]
-    (* Si l'arc sortant est valide mais le chemin n'est pas fini *)
-    | Some id -> id :: (find_path_loop (id1::id_liste) id )
   in
+  let resultat = find_path_loop id1 [] (out_arcs gr id1) in
+  if resultat = [] then None else Some (id1::resultat)
 
-  match (find_path_loop [] ident1) with
-  | [] -> None
-      | l -> Some (ident1 :: l)*)
-
-
+(* string_of_path p
+ *    returns the path convert in string
+*)
 let rec string_of_path = function
   | None -> ""
   | Some [] -> ""
+  | Some (a :: []) -> (string_of_int a)
   | Some (a :: tl) -> (string_of_int a) ^ " -> " ^ (string_of_path (Some tl))
 
+(* flow_min gr p
+ *    returns the minimum flow found in the path p for the graph gr
+ *
+ * 	  raise Not_found if the path is not valid
+*)
 let flow_min gr p =
-	Printf.printf "Recherche du min dans %s\n" (string_of_path (Some p)) ;
   let rec flow_min_loop min = function
     | [] -> min
     | id1 :: [] -> min
@@ -91,26 +77,35 @@ let flow_min gr p =
       flow_min_loop new_min (id2::tl)
   in
   flow_min_loop max_int p
-  
-let actu_graph gr p add =
-  Printf.printf "Actualisation du chemin avec un min de %i\n" add;
-  let rec actu_loop gr p add =
+
+(* actu_graph gr p actu
+ *    returns a graph with the path p actualised with the value add
+ *    (the edges in the same way of the path subtract the value actu to their label)
+ *    (the edges in the opposite way of the path add the value actu to their label)
+ *
+ *    raise Not_found if the path is not valid
+*)
+let actu_graph gr p actu =
+  Printf.printf "Actualisation du chemin %s avec un min %i" (string_of_path (Some p)) actu ;
+  let rec actu_loop gr p actu =
     match p with
-    | id1::id2::[] -> let new_gr = add_arc gr id1 id2 (add*(-1))
-      in
-      add_arc new_gr id2 id1 add
-    | id1::id2::tl -> let new_gr = add_arc gr id1 id2 (add*(-1))
-      in
-      let new_gr = add_arc new_gr id2 id1 add
-      in
-      actu_loop new_gr (id2::tl) add
+    | id1::id2::[] -> let new_gr = add_arc gr id1 id2 (actu*(-1)) in
+      add_arc new_gr id2 id1 actu
+    | id1::id2::tl -> let new_gr = add_arc gr id1 id2 (actu*(-1)) in
+      let new_gr = add_arc new_gr id2 id1 actu in
+      actu_loop new_gr (id2::tl) actu
     | _ -> raise Not_found
   in
-  actu_loop gr p add
-	
-let rec fordfulk gr id1 id2 =
-  match (find_path gr id1 id2) with
+  actu_loop gr p actu
+
+(* fordfulk gr source sink
+ *    returns the graph gr which FordFulkerson algorithm has been applied
+ *
+ *    source is the id of the source node
+ *    sink is the id of the sink node
+*)
+let rec fordfulk gr source sink =
+  Printf.printf "Iteration de FordFulkerson\n" ;
+  match (find_path gr source sink) with
   | None -> gr
-  | Some p -> fordfulk (actu_graph gr p (flow_min gr p)) id1 id2
-	
-	
+  | Some p -> fordfulk (actu_graph gr p (flow_min gr p)) source sink
