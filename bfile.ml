@@ -1,0 +1,60 @@
+open Printf
+open Adoption
+
+type path = string
+
+(*
+
+ Format des fichiers texte
+ % C'est un commentaire
+ % C = en recherche / A = en attente
+ % Couleur de cheveux possibles : brun / blond / roux
+ % Type de relation : aventure / amicale / serieuse
+ % Loisirs possibles : sport / lecture / sorties / musique / films / gastronomie / jeux-video / arts-plastiques
+
+ % Un adopteur est définit comme suivant :
+ % (nom couleur_des_cheveux taille_min_acceptee type_relation liste_loisirs)
+   C Amelie brun/blond/roux 1.20 aventure/amicale/serieuse sport/films/gastronomie
+
+ % Un adopte est definit comme suivant :
+ % (nom couleur_cheveux taille type_relation liste_loisirs)
+   A Brice brun 1.77 aventure/serieuse sports/lecture/jeux-video
+ *)
+
+let read_adopteur n l_adopteurs line =
+	try Scanf.sscanf line "C %s %s %f %s %s" (fun _ _ _ _ _ -> new_node graph id)
+
+let from_file path =
+
+  let infile = open_in path in
+
+  (* Read all lines until end of file. 
+   * n is the current node counter. *)
+  let rec loop n l_adopteurs l_adoptes =
+    try
+      let line = input_line infile in
+
+      (* Remove leading and trailing spaces. *)
+      let line = String.trim line in
+
+      let (n2, l_adopteur2, l_adoptes2) =
+        (* Ignore empty lines *)
+        if line = "" then (n, l_adopteurs, l_adoptes)
+
+        (* The first character of a line determines its content : n or e. *)
+        else match line.[0] with
+          | 'C' -> (n+1, read_adopteur n l_adopteurs line, l_adoptes)
+          | 'A' -> (n+1, l_adopteurs, read_adopte n l_adoptes line)
+
+          (* It should be a comment, otherwise we complain. *)
+          | _ -> (n, read_comment graph line)
+      in      
+      loop n2 graph2
+
+    with End_of_file -> (l_adopteurs,l_adoptes) (* Done *)
+  in
+
+  let final_listes = loop 1 [] [] in
+  
+  close_in infile ;
+  final_listes

@@ -1,0 +1,14 @@
+% Couleur de cheveux possibles : brun / blond / roux
+% Type de relation : aventure / amicale / serieuse
+% Loisirs possibles : sport / lecture / sorties / musique / films / gastronomie / jeux-video / arts-plastiques
+
+% Liste des adopteurs
+% (nom couleur_des_cheveux taille_min_acceptee type_relation liste_loisirs)
+Amelie brun/blond/roux 1.20 aventure/amicale/serieuse sport/films/gastronomie
+Clarisse brun/blond 1.6 amicale sport/films/arts-plastiques
+Sophie blond 1.5 amicale/serieuse sport/sorties
+
+% Liste adoptes
+% (nom couleur_cheveux taille type_relation liste_loisirs)
+Brice brun 1.77 aventure/serieuse sports/lecture/jeux-video
+Louis brun 1.8 serieuse musique/films/jeux-video
