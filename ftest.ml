@@ -1,7 +1,10 @@
 open Gfile
+open Adoption
+open Bfile
 open Tools
 open Fordfulkerson
 open Graph
+open Biparti
     
 let () =
 
@@ -24,14 +27,9 @@ let () =
   in
 
   (* Open file *)
-  let graph = from_file infile in
-  
-  let () = export "graphdot.txt" graph in
-  
-  let () = write_file "graph_avant_actu.txt" graph in
-  
-  let gr_actu = gmap graph int_of_string in
-  let gr_actu = fordfulk gr_actu _source _sink in
-  let () = write_file outfile (gmap gr_actu string_of_int) in
+  let (l1,l2) = from_bfile infile in
+  let gr = gr_biparti l1 l2 empty_graph in
+  let gr = fordfulk gr 0 ((nb_participants l1 l2)+1) in
+  let () = write_file outfile (gmap gr string_of_int) in
   
   ()

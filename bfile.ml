@@ -4,7 +4,6 @@ open Adoption
 type path = string
 
 (*
-
  Format des fichiers texte
  % C'est un commentaire
  % C = en recherche / A = en attente
@@ -22,9 +21,25 @@ type path = string
  *)
 
 let read_adopteur n l_adopteurs line =
-	try Scanf.sscanf line "C %s %s %f %s %s" (fun _ _ _ _ _ -> new_node graph id)
+	try Scanf.sscanf line "C %s %s %f %s %s" (fun nom ch_a taille_min_a rel_a lois_a -> ajout_adopteur n nom (String.split_on_char '/' ch_a) taille_min_a (String.split_on_char '/' rel_a) (String.split_on_char '/' lois_a) l_adopteurs)
+	with e ->
+    Printf.printf "Cannot read adopteur in line - %s:\n%s\n%!" (Printexc.to_string e) line ;
+    failwith "from_file"
+    
+let read_adopte n l_adoptes line =
+	try Scanf.sscanf line "A %s %s %f %s %s" (fun nom ch taille rel_a lois_a -> ajout_adopte n nom ch taille (String.split_on_char '/' rel_a) (String.split_on_char '/' lois_a) l_adoptes)
+	with e ->
+    Printf.printf "Cannot read adopte in line - %s:\n%s\n%!" (Printexc.to_string e) line ;
+    failwith "from_file"
+    
+(* Reads a comment or fail. *)
+let read_comment l_adopteurs line =
+  try Scanf.sscanf line "%%s" l_adopteurs
+  with _ ->
+    Printf.printf "Unknown line:\n%s\n%!" line ;
+    failwith "from_file"
 
-let from_file path =
+let from_bfile path =
 
   let infile = open_in path in
 
@@ -37,19 +52,19 @@ let from_file path =
       (* Remove leading and trailing spaces. *)
       let line = String.trim line in
 
-      let (n2, l_adopteur2, l_adoptes2) =
+      let (n2, l_adopteurs2, l_adoptes2) =
         (* Ignore empty lines *)
         if line = "" then (n, l_adopteurs, l_adoptes)
 
         (* The first character of a line determines its content : n or e. *)
         else match line.[0] with
-          | 'C' -> (n+1, read_adopteur n l_adopteurs line, l_adoptes)
-          | 'A' -> (n+1, l_adopteurs, read_adopte n l_adoptes line)
+          | 'C' -> (n+1, (read_adopteur n l_adopteurs line), l_adoptes)
+          | 'A' -> (n+1, l_adopteurs, (read_adopte n l_adoptes line))
 
           (* It should be a comment, otherwise we complain. *)
-          | _ -> (n, read_comment graph line)
+          | _ -> (n, (read_comment l_adopteurs line), l_adoptes)
       in      
-      loop n2 graph2
+      loop n2 l_adopteurs2 l_adoptes2
 
     with End_of_file -> (l_adopteurs,l_adoptes) (* Done *)
   in
