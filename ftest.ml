@@ -28,8 +28,7 @@ let () =
 
   (* Open file *)
   let (l1,l2) = from_bfile infile in
-  let gr = gr_biparti l1 l2 empty_graph in
-  let gr = fordfulk gr 0 ((nb_participants l1 l2)+1) in
-  let () = write_file outfile (gmap gr string_of_int) in
+  let () = lire_listes l1 l2 in
+  let () = matching l1 l2 in
   
   ()

@@ -1,5 +1,6 @@
 open Graph
 open Adoption
+open Fordfulkerson
 
 (* Renvoie vrai s'il existe au moins un ŽlŽment commun entre deux listes *)
 let rec commun l1 l2 =
@@ -60,6 +61,19 @@ let gr_biparti l_adopteurs l_adoptes gr =
 	let rec completer_noeuds gr = function
 		| 0 -> gr
 		| n when (node_exists gr n) -> completer_noeuds gr (n-1)
-			  | n -> completer_noeuds (new_node gr n) (n-1)
+		| n -> completer_noeuds (new_node gr n) (n-1)
 	in
   completer_noeuds ngr nb_part
+		
+  
+let matching l_adopteurs l_adoptes =
+	let gr_res = fordfulk (gr_biparti l_adopteurs l_adoptes empty_graph) 0 ((nb_participants l_adopteurs l_adoptes)+1) in
+	let rec chercher_match l gr =
+		match l with
+		| [] -> ()
+		| adopteur :: tl when (List.exists (fun adopte -> ((find_arc gr adopteur.id_c adopte.id_a)=Some 0)) l_adoptes) ->
+										 let adopte = (List.find (fun adopte -> ((find_arc gr adopteur.id_c adopte.id_a)=Some 0)) l_adoptes) in
+										 Printf.printf "%s a ete matche avec %s.\n" adopteur.nom_c adopte.nom_a ; chercher_match tl gr
+		| adopteur :: tl -> Printf.printf "%s n'a pas ete matche.\n" adopteur.nom_c ; chercher_match tl gr
+	in
+	chercher_match l_adopteurs gr_res ;
