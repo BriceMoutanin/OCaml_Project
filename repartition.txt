@@ -1,5 +1,17 @@
-C Amelie brun/blond 1.20 aventure/amicale/serieuse sport/films/gastronomie
+C Amelie brun/blond 1.60 aventure/amicale/serieuse sport/films/gastronomie
+C Elizabeth brun 1.75 amicale/serieuse artsplastiques/sorties/lecture
+C Manon brun/blond/roux 1.60 aventure films/gastronomie
+C Claire blond 1.65 aventure/amicale/serieuse sport/sorties/jeuxvideo
+C Jennifer brun/roux 1.55 aventure/serieuse films/sorties
+C Lyana brun 1.75 serieuse jeuxvideo/sport/musique
 C Clarisse brun/blond 1.6 amicale sport/films/artsplastiques
 C Sophie brun 1.5 amicale/serieuse sport/sorties
+
 A Brice brun 1.77 aventure/serieuse sport/lecture/jeuxvideo
 A Louis brun 1.8 serieuse musique/films/jeuxvideo
+A Max brun 1.86 serieuse jeuxvideo/sport
+A Theau blond 1.79 aventure/serieuse films/gastronomie/sorties
+A Aurelien brun 1.77 aventure/serieuse/amicale sorties/films
+A Alexandre brun 1.78 aventure/serieuse jeuxvideo/sport
+A Patrick brun 1.74 serieuse jeuxvideo/sorties/artsplastiques
+A Antoine blond 1.94 amicale sorties/artsplastiques/lecture
