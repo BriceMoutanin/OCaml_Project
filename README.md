@@ -20,7 +20,9 @@ Le système de matching se base sur différents critères :
 Les différentes personnes sont définies dans un fichier texte selon le schéma suivant :
 
 C Nom CouleursDeCheveuxRecherchées TailleMinimumAcceptée TypesRelationsRecherchées Loisirs
+
 OU
+
 A Nom CouleursDeCheveux Taille TypesRelationsRecherchées Loisirs
 
 C = Adopteur
@@ -35,6 +37,7 @@ Les différents loisirs acceptés sont : sport, lecture, films, gastronomie, mus
 Voici un exemple :
 
 C Amelie brun/blond 1.60 aventure/amicale/serieuse sport/films/gastronomie
+
 A Antoine blond 1.94 amicale sorties/artsplastiques/lecture
 
 | Comment l'utiliser ? |
