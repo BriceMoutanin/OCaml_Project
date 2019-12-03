@@ -20,9 +20,7 @@ Le système de matching se base sur différents critères :
 Les différentes personnes sont définies dans un fichier texte selon le schéma suivant :
 
 C Nom CouleursDeCheveuxRecherchées TailleMinimumAcceptée TypesRelationsRecherchées Loisirs
-
 OU
-
 A Nom CouleursDeCheveux Taille TypesRelationsRecherchées Loisirs
 
 C = Adopteur
