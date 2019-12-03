@@ -1,11 +1,16 @@
+(* Le module Bfile a pour rôle de construire une structure de données
+ * à partir d'un fichier texte au bon format.
+ * Cette structure de données va contenir les différentes personnes impliquées
+ * dans le matching
+ *)
+
 open Printf
 open Adoption
 
 type path = string
 
-(*
+(* ////////////////////////////////////////////////////////////////////////////////////////////////////////////
  Format des fichiers texte
- % C'est un commentaire
  % C = en recherche / A = en attente
  % Couleur de cheveux possibles : brun / blond / roux
  % Type de relation : aventure / amicale / serieuse
@@ -17,15 +22,26 @@ type path = string
 
  % Un adopte est definit comme suivant :
  % (nom couleur_cheveux taille type_relation liste_loisirs)
-   A Brice brun 1.77 aventure/serieuse sports/lecture/jeux-video
+   A Brice brun 1.77 aventure/serieuse sports/lecture/jeuxvideo
+ * ////////////////////////////////////////////////////////////////////////////////////////////////////////////
  *)
 
+(* read_adopteur n l_adopteurs line
+ * renvoie la liste l_adopteurs à laquelle on a
+ * rajouté un nouvel adopteur (id = n), construit
+ * à partir de la line
+ *)
 let read_adopteur n l_adopteurs line =
 	try Scanf.sscanf line "C %s %s %f %s %s" (fun nom ch_a taille_min_a rel_a lois_a -> ajout_adopteur n nom (String.split_on_char '/' ch_a) taille_min_a (String.split_on_char '/' rel_a) (String.split_on_char '/' lois_a) l_adopteurs)
 	with e ->
     Printf.printf "Cannot read adopteur in line - %s:\n%s\n%!" (Printexc.to_string e) line ;
     failwith "from_file"
-    
+
+(* read_adopte n l_adoptes line
+ * renvoie la liste l_adoptes à laquelle on a
+ * rajouté un nouvel adopte (id = n), construit
+ * à partir de la line
+ *)
 let read_adopte n l_adoptes line =
 	try Scanf.sscanf line "A %s %s %f %s %s" (fun nom ch taille rel_a lois_a -> ajout_adopte n nom ch taille (String.split_on_char '/' rel_a) (String.split_on_char '/' lois_a) l_adoptes)
 	with e ->
@@ -39,6 +55,11 @@ let read_comment l_adopteurs line =
     Printf.printf "Unknown line:\n%s\n%!" line ;
     failwith "from_file"
 
+(* from_file path
+ * renvoie un tuple de listes
+ * la première liste est la liste des adopteurs
+ * la seconde liste est la liste des adoptes
+ *)
 let from_bfile path =
 
   let infile = open_in path in

@@ -8,7 +8,8 @@ let rec commun l1 l2 =
 		| [] -> false
 		| a :: tl when List.exists (fun x -> a=x) l2 -> true
 		| a :: tl -> commun tl l2
-		
+
+(* renvoie le nombre de participants *)
 let rec nb_participants l_adopteurs l_adoptes =
 	match (l_adopteurs,l_adoptes) with
 	| ([],[]) -> 0
@@ -16,6 +17,12 @@ let rec nb_participants l_adopteurs l_adoptes =
 	| (a::tl,[]) -> 1 + (nb_participants tl [])
 	| ([],a::tl) -> 1 + (nb_participants [] tl)
 
+(* renvoie une liste de paires possibles entre adopteurs et adoptes
+ * Ces paires sont construites entre un adopteur et un adopte a condition :
+ * - que la taille de l'adopte soit superieure taille minimale demandŽe par l'adopteur
+ * - qu'il existe une relation recherchŽe en commun entre l'adopteur et l'adopte
+ * - qu'il existe au moins un loisir en commun entre l'adopteur et l'adopte
+ *)
 let rec construire_paires l_adopteurs l_adoptes =
 	match l_adopteurs with
 	| [] -> []
@@ -29,13 +36,14 @@ let rec construire_paires l_adopteurs l_adoptes =
 													| adopte :: tl2 -> (adopteur.id_c , adopte.id_a) :: trouver_adopte tl2
 											in
 											List.append (trouver_adopte l_adoptes) (construire_paires tl l_adoptes)
-											
-let gr_biparti l_adopteurs l_adoptes gr =
+
+(* renvoie un graphe biparti grace aux paires construites avec construire_paires *)
+let gr_biparti l_adopteurs l_adoptes =
 	let nb_part = nb_participants l_adopteurs l_adoptes in
 	let id_source = 0 in
 	let id_puits = nb_part + 1 in
 	let id_l = construire_paires l_adopteurs l_adoptes in
-	let ngr = new_node gr id_source in
+	let ngr = new_node empty_graph id_source in
 	let ngr = new_node ngr id_puits in
 	let rec construire_gr_biparti l gr =
 	match l with
@@ -65,9 +73,11 @@ let gr_biparti l_adopteurs l_adoptes gr =
 	in
   completer_noeuds ngr nb_part
 		
-  
+(* affiche a la console le matching obtenu a partir des listes des adopteurs
+ * et des adoptes
+ *)
 let matching l_adopteurs l_adoptes =
-	let gr_res = fordfulk (gr_biparti l_adopteurs l_adoptes empty_graph) 0 ((nb_participants l_adopteurs l_adoptes)+1) in
+	let gr_res = fordfulk (gr_biparti l_adopteurs l_adoptes) 0 ((nb_participants l_adopteurs l_adoptes)+1) in
 	let rec chercher_match l gr =
 		match l with
 		| [] -> ()

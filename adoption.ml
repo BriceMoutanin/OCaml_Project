@@ -1,3 +1,7 @@
+(* Le module Adoption permet de créer et gérer les structures de données
+ * qui vont contenir les différentes profils pour l'application de matching
+ *)
+
 type couleur_cheveux = Brun | Blond | Roux
 type relation = Serieuse | Aventure | Amicale
 type loisirs = Sport | Lecture | Sorties | Musique | Films | Gastronomie | JeuxVideo | ArtsPlastiques
@@ -20,6 +24,10 @@ type adopte = {
 	mes_loisirs_a: loisirs list;	
 }
 
+(* construire_liste_cheveux l
+ * l est une liste de string qui correspondent à une couleur de cheveux
+ * renvoie une liste de couleur_cheveux
+ *)
 let rec construire_liste_cheveux = function
 	| [] -> []
 	| "brun" :: tl -> Brun :: (construire_liste_cheveux tl)
@@ -27,6 +35,10 @@ let rec construire_liste_cheveux = function
 	| "roux" :: tl -> Roux :: (construire_liste_cheveux tl)
 	| _ :: tl -> raise Not_found
 
+(* construire_liste_rel l
+ * l est une liste de string qui correspondent à un type de relation
+ * renvoie une liste de relation
+ *)
 let rec construire_liste_rel = function
 	| [] -> []
 	| "serieuse" :: tl -> Serieuse :: (construire_liste_rel tl)
@@ -34,6 +46,10 @@ let rec construire_liste_rel = function
 	| "aventure" :: tl -> Aventure :: (construire_liste_rel tl)
 	| _ :: tl -> raise Not_found
 
+(* construire_liste_lois l
+ * l est une liste de string qui correspondent à un loisir
+ * renvoie une liste de loisirs
+ *)
 let rec construire_liste_lois = function
 	| [] -> []
 	| "sport" :: tl -> Sport :: (construire_liste_lois tl)
@@ -46,6 +62,9 @@ let rec construire_liste_lois = function
 	| "artsplastiques" :: tl -> ArtsPlastiques :: (construire_liste_lois tl)
 	| _ :: tl -> raise Not_found
 
+(* ajout_adopteur id nom cheveux_l taille_min rel_l loisirs_l adopteurs_l
+ * renvoie la liste adopteurs_l à laquelle on a ajoute un nouvel adopteur
+ *)
 let ajout_adopteur id nom ch taille_min rel_a lois_a ad_l =
 		({id_c = id ;
 		nom_c = nom ;
@@ -54,6 +73,9 @@ let ajout_adopteur id nom ch taille_min rel_a lois_a ad_l =
 		relation_recherchee_c = (construire_liste_rel rel_a) ;
 		mes_loisirs_c = (construire_liste_lois lois_a) ; } :: ad_l)
 		
+(* ajout_adopte id nom cheveux taille rel_l loisirs_l adoptes_l
+ * renvoie la liste adoptes_l à laquelle on a ajoute un nouvel adopte
+ *)
 let ajout_adopte id nom ch_a taille rel_a lois_a ad_l =
 		({id_a = id ;
 		nom_a = nom ;
@@ -66,7 +88,10 @@ let ajout_adopte id nom ch_a taille rel_a lois_a ad_l =
 		taille = taille ;
 		relation_recherchee_a = (construire_liste_rel rel_a) ;
 		mes_loisirs_a = (construire_liste_lois lois_a) ; } :: ad_l)
-		
+
+(* lire_listes adopteurs_l adoptes_l
+ * affiche chaque personne de chaque liste avec un résumé de son profil
+ *)
 let lire_listes l_adopteurs l_adoptes =
 	Printf.printf "La liste des adopteurs est la suivante :\n\n" ;
 	let rec lire_adopteurs = function
