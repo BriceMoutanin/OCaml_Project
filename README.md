@@ -15,7 +15,7 @@ Le système de matching se base sur différents critères :
 - Les types de relation recherchée
 - Les loisirs
 
-| Comment ça marche ? |
+## Comment ça marche ?
 
 Les différentes personnes sont définies dans un fichier texte selon le schéma suivant :
 
@@ -40,7 +40,7 @@ C Amelie brun/blond 1.60 aventure/amicale/serieuse sport/films/gastronomie
 
 A Antoine blond 1.94 amicale sorties/artsplastiques/lecture
 
-| Comment l'utiliser ? |
+### Comment l'utiliser ?
 
 Pour exécuter l'algorithme, il suffit d'exécuter le ftest avec en argument le fichier texte qui contient les différentes
 personnes (selon le format expliqué précédemment).
