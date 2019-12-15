@@ -17,11 +17,11 @@ let rec find_path gr id1 id2 =
     (* Si le noeud suivant a deja ete visite *)
     | (id,lb)::tl when (List.exists (fun a -> a = id) forbidden) -> find_path_loop id_c forbidden tl
     (* Si le noeud suivant est inatteignable (flot=0) *)
-    | (id,lb)::tl when lb=0 -> find_path_loop id_c forbidden tl
+    | (id,lb)::tl when lb=0 ->  find_path_loop id_c forbidden tl
     (* Si on est arrive au dernier noeud *)
     | (id,lb)::tl when id=id2 -> [id2]
-    (* S'il existe un noeud suivant (non interdit) plus loin dans la liste qui offre un arc avec un meilleur flot *)
-    | (id,lb)::tl when (List.exists (fun (a,b) -> (List.exists (fun i -> i=a) forbidden) && (b > lb) && not (find_path_loop a (id_c::forbidden) (out_arcs gr a)=[])) tl) -> find_path_loop id_c forbidden tl
+    (* S'il existe un noeud suivant (non interdit) plus loin dans la liste qui offre un arc avec un meilleur flot et qui peut aboutir au noeud puits *)
+    | (id,lb)::tl when (List.exists (fun (a,b) -> not (List.exists (fun i -> i=a) forbidden) && (b > lb) && not (find_path_loop a (id_c::forbidden) (out_arcs gr a)=[])) tl) -> find_path_loop id_c forbidden tl
     (* Si le noeud suivant semble etre ok *)
     | (id,lb)::tl ->(* On verifie quel chemin propose ce noeud *)
       begin match (find_path_loop id (id_c::forbidden) (out_arcs gr id)) with

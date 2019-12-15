@@ -95,7 +95,7 @@ let ajout_adopte id nom ch_a taille rel_a lois_a ad_l =
 let lire_listes l_adopteurs l_adoptes =
 	Printf.printf "La liste des adopteurs est la suivante :\n\n" ;
 	let rec lire_adopteurs = function
-		| [] -> Printf.printf "\n\n\n" ;
+		| [] -> Printf.printf "\n\n" ;
 		| adopteur :: tl -> Printf.printf "%s (id = %i) recherche un homme " adopteur.nom_c adopteur.id_c ;
 												let rec lire_couleurs = function
 													| [] -> Printf.printf ".\n"

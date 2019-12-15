@@ -1,0 +1,7 @@
+C Amelie brun/blond 1.50 aventure/amicale/serieuse sport/films/gastronomie
+C Manon brun/blond/roux 1.50 aventure/amicale/serieuse films/gastronomie
+C Jennifer brun/roux 1.50 aventure/amicale/serieuse films/sorties
+
+A Brice brun 1.65 aventure/amicale/serieuse sorties
+A Louis brun 1.70 aventure/amicale/serieuse musique/films/jeuxvideo
+A Max brun 1.86 aventure/amicale/serieuse films/sport/lecture/jeuxvideo
